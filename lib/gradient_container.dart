@@ -17,6 +17,7 @@ class GradientContainer extends StatelessWidget {
               end: end
             )
           ),
+          child: Center(child: Image.asset('assets/images/quiz-logo.png',width: 300,)),
         );
   }
 
