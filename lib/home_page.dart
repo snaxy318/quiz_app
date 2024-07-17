@@ -34,8 +34,15 @@ class _HomePage extends State<HomePage> {
                 color: Colors.white,
               ),
             ),
+            const SizedBox(
+              height:25,
+            ),
             ElevatedButton(
               onPressed: startButton,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromRGBO(0, 0, 0, 1),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
+              ),
               child: const Text(
                 'Start quiz',
                 style: TextStyle(

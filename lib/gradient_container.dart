@@ -17,7 +17,7 @@ class GradientContainer extends StatelessWidget {
           end: end,
         ),
       ),
-      child: HomePage(),
+      child: const HomePage(),
     );
   }
 }
