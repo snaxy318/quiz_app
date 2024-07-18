@@ -23,6 +23,7 @@ class _HomePage extends State<HomePage> {
           Image.asset(
             'assets/images/quiz-logo.png',
             width: 250,
+            color: const Color.fromARGB(150, 255, 255, 255),
           ),
           const SizedBox(
             height: 50,
@@ -38,7 +39,7 @@ class _HomePage extends State<HomePage> {
           ),
           ElevatedButton.icon(
             onPressed: startButton,
-            icon:Icon(Icons.arrow_right_alt),
+            icon:const Icon(Icons.arrow_right_alt,color: Colors.white,),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromRGBO(0, 0, 0, 1),
               shape: RoundedRectangleBorder(
