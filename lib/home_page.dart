@@ -36,15 +36,17 @@ class _HomePage extends State<HomePage> {
           const SizedBox(
             height: 25,
           ),
-          ElevatedButton(
+          ElevatedButton.icon(
             onPressed: startButton,
+            icon:Icon(Icons.arrow_right_alt),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromRGBO(0, 0, 0, 1),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
+              
             ),
-            child: const Text(
+            label: const Text(
               'Start quiz',
               style: TextStyle(
                 color: Colors.white,
