@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage(this.switchScreen,{super.key});
 
-  @override
-  State<HomePage> createState() {
-    return _HomePage();
-  }
-}
+  final void Function() switchScreen;
 
-class _HomePage extends State<HomePage> {
   void startButton() {
-    //...
+    switchScreen;
   }
 
   @override
