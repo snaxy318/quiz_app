@@ -6,7 +6,8 @@ class HomePage extends StatelessWidget {
   final void Function() switchScreen;
 
   void startButton() {
-    switchScreen;
+    switchScreen();
+    print("in here");
   }
 
   @override
