@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class QuestionPage extends StatefulWidget{
+class QuestionPage extends StatefulWidget {
   const QuestionPage({super.key});
 
   @override
@@ -10,25 +10,34 @@ class QuestionPage extends StatefulWidget{
 }
 
 class _QuestionPageState extends State<QuestionPage> {
-  @override 
+  @override
   Widget build(context) {
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text("Question"),
-          const SizedBox(
-            width: 30,
-          ),
-          ElevatedButton(onPressed: () {}, child: const Text('Answer 1'),),
-          ElevatedButton(onPressed: () {}, child: const Text('Answer 2'),),
-          ElevatedButton(onPressed: () {}, child: const Text('Answer 3'),),
-          ElevatedButton(onPressed: () {}, child: const Text('Answer 4'),),
-          
-        ]
-      
-      ),
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        const Text("Question",style: TextStyle(
+          color: Colors.white,
+        ),),
+        const SizedBox(
+          width: 30,
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text('Answer 1'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text('Answer 2'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text('Answer 3'),
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: const Text('Answer 4'),
+        ),
+      ]),
     );
   }
 }
