@@ -13,18 +13,18 @@ class QuestionPage extends StatefulWidget {
 class _QuestionPageState extends State<QuestionPage> {
   @override
   Widget build(context) {
-    return const SizedBox(
+    return SizedBox(
       width: double.infinity,
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text("Question",style: TextStyle(
+        const Text("Question",style: TextStyle(
           color: Colors.white,
         ),),
         const SizedBox(
           width: 30,
         ),
-        AnswerButton('answer1'),
-        AnswerButton('ans2'),
-        AnswerButton('ans3'),
+        AnswerButton(answerText:'Answer 1',onTap: () {},),
+        AnswerButton(answerText:'Answer 2',onTap: () {},),
+        AnswerButton(answerText:'Answer 3',onTap: () {},),
       ]),
     );
   }
