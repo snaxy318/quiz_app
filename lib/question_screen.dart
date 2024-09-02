@@ -34,7 +34,7 @@ class _QuestionPageState extends State<QuestionPage> {
             const SizedBox(
               width: 30,
             ),
-            ...currentQuestion.answers.map(
+            ...currentQuestion.shuffelAnswers().map(
               (answer) {
                 return AnswerButton(answerText: answer, onTap: () {});
               },
