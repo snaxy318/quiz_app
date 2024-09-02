@@ -18,22 +18,29 @@ class _QuestionPageState extends State<QuestionPage> {
 
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            currentQuestion.text,
-            style: const TextStyle(
-              color: Colors.white,
+      child: Container(
+        padding: const EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              currentQuestion.text,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
-          const SizedBox(
-            width: 30,
-          ),
-          ...currentQuestion.answers.map((answer){
-            return AnswerButton(answerText: answer,onTap:(){});
-          },),
-        ],
+            const SizedBox(
+              width: 30,
+            ),
+            ...currentQuestion.answers.map(
+              (answer) {
+                return AnswerButton(answerText: answer, onTap: () {});
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
