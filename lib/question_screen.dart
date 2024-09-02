@@ -12,9 +12,18 @@ class QuestionPage extends StatefulWidget {
 }
 
 class _QuestionPageState extends State<QuestionPage> {
+  var currentQuestionIndex = 0;
+
+  void answerQuestion() {
+      print(currentQuestionIndex);
+      setState(() {
+        currentQuestionIndex++;
+      });
+  }
+
   @override
   Widget build(context) {
-    final currentQuestion = questions[0];
+    final currentQuestion = questions[currentQuestionIndex];
 
     return SizedBox(
       width: double.infinity,
@@ -36,7 +45,7 @@ class _QuestionPageState extends State<QuestionPage> {
             ),
             ...currentQuestion.shuffelAnswers().map(
               (answer) {
-                return AnswerButton(answerText: answer, onTap: () {});
+                return AnswerButton(answerText: answer, onTap: answerQuestion,);
               },
             ),
           ],
