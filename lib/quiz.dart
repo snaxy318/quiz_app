@@ -11,8 +11,11 @@ class Quiz extends StatefulWidget {
   }
 }
 
+
+
 class _QuizState extends State<Quiz> {
-  Widget? currentScreen ;
+  final List<String> selectedAnswers = [];
+  Widget? currentScreen ; 
 
   @override
   void initState() {
@@ -20,12 +23,17 @@ class _QuizState extends State<Quiz> {
     super.initState();
   }
 
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
+
   void switchScreen() {
     print("in switch");
     setState(() {
-      currentScreen = const QuestionPage();
+      currentScreen = QuestionPage(onSelectAnswer: chooseAnswer);
     });
   }
+
 
   @override
   Widget build(context) {

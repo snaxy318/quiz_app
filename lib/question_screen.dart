@@ -5,7 +5,9 @@ import 'package:quiz_app/answer_button.dart';
 import 'package:quiz_app/data/questions.dart';
 
 class QuestionPage extends StatefulWidget {
-  const QuestionPage({super.key});
+  const QuestionPage({super.key, required this.onSelectAnswer});
+
+  final void Function(String answer) onSelectAnswer;
 
   @override
   State<QuestionPage> createState() {
@@ -16,11 +18,12 @@ class QuestionPage extends StatefulWidget {
 class _QuestionPageState extends State<QuestionPage> {
   var currentQuestionIndex = 0;
 
-  void answerQuestion() {
-      print(currentQuestionIndex);
-      setState(() {
-        currentQuestionIndex++;
-      });
+  void answerQuestion(String selectedAnswer) {
+    widget.onSelectAnswer(selectedAnswer);
+    print(currentQuestionIndex);
+    setState(() {
+      currentQuestionIndex++;
+    });
   }
 
   @override
@@ -38,7 +41,7 @@ class _QuestionPageState extends State<QuestionPage> {
             Text(
               currentQuestion.text,
               style: GoogleFonts.lato(
-                color:Colors.white,
+                color: Colors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -49,7 +52,12 @@ class _QuestionPageState extends State<QuestionPage> {
             ),
             ...currentQuestion.shuffelAnswers().map(
               (answer) {
-                return AnswerButton(answerText: answer, onTap: answerQuestion,);
+                return AnswerButton(
+                  answerText: answer,
+                  onTap: () {
+                    answerQuestion(answer);
+                  },
+                );
               },
             ),
           ],
