@@ -50,7 +50,13 @@ class ResultScreen extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {},
-              child: const Text('Restart Quiz!'),
+              style: TextButton.styleFrom(
+                backgroundColor: Color.fromARGB(255, 249, 163, 3),
+              ),
+              child: const Text('Restart Quiz!',style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),),
             ),
           ],
         ),
