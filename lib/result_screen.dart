@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
-import 'package:quiz_app/question_summary.dart';
+import 'package:quiz_app/question_summary/question_summary.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key,required this.choosenAnswers});
+  const ResultScreen({super.key, required this.choosenAnswers});
 
   final List<String> choosenAnswers;
 
-  List<Map<String,Object>> getSummaryData() {
-    List<Map<String,Object>> summary = [];
-    for(var i=0;i<choosenAnswers.length;i++){
+  List<Map<String, Object>> getSummaryData() {
+    List<Map<String, Object>> summary = [];
+    for (var i = 0; i < choosenAnswers.length; i++) {
       summary.add({
         'question_index': i,
         'question': questions[i].text,
@@ -25,8 +25,8 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final summaryData = getSummaryData();
     final totalNoOfQuestions = questions.length;
-    final correctNoOfQuestion = summaryData.where((data){
-      return (data['user_answer']==data['correct_answer']);
+    final correctNoOfQuestion = summaryData.where((data) {
+      return (data['user_answer'] == data['correct_answer']);
     }).length;
 
     return SizedBox(
@@ -36,11 +36,15 @@ class ResultScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('You answer $correctNoOfQuestion out of $totalNoOfQuestions questions correctly'),
+            Text(
+              'You answer $correctNoOfQuestion out of $totalNoOfQuestions questions correctly !',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white,fontSize: 20),
+            ),
             const SizedBox(
               height: 30,
             ),
-            QuestionSummary(summaryData),            
+            QuestionSummary(summaryData),
             const SizedBox(
               height: 30,
             ),
