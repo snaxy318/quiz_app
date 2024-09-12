@@ -39,7 +39,7 @@ class ResultScreen extends StatelessWidget {
             Text(
               'You answer $correctNoOfQuestion out of $totalNoOfQuestions questions correctly !',
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontSize: 20),
+              style: const TextStyle(color: Colors.white,fontSize: 20),
             ),
             const SizedBox(
               height: 30,
