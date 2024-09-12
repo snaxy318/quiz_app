@@ -22,7 +22,7 @@ class QuestionSummary extends StatelessWidget {
             bool isCorrect = isCorrectAnswer(data['user_answer'] as String,
                 data['correct_answer'] as String);
             return Container(
-              margin: EdgeInsets.all(8),
+              margin: const EdgeInsets.all(8),
               child: Row(
                 children: [
                   Container(

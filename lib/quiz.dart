@@ -31,9 +31,16 @@ class _QuizState extends State<Quiz> {
 
     if(selectedAnswers.length==questions.length) {
       setState(() {
-        currentScreen = ResultScreen(choosenAnswers: selectedAnswers,);
+        currentScreen = ResultScreen(choosenAnswers: selectedAnswers,onRestart: restartQuiz,);
       }); 
     }
+  }
+
+  void restartQuiz(){
+    setState((){
+      selectedAnswers=[];
+      currentScreen=HomePage(switchScreen);
+    });
   }
 
   void switchScreen() {
